@@ -130,8 +130,8 @@ def webhook_handler():
     signature = request.headers["X-Line-Signature"]
     # get request body as text
     body = request.get_data(as_text=True)
-    app.logger.info(f"Request body: {body}")
-    print('\n===\n')
+    # app.logger.info(f"Request body: {body}")
+    # print('\n===\n')
 
     # parse webhook body
     try:
@@ -165,9 +165,6 @@ def webhook_handler():
                 machine.go(event)
         print(machine.state)
 
-
-    # if not machine.state == "user" :
-    #     machine.go_back()
     return "OK"
 
 
