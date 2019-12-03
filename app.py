@@ -51,7 +51,7 @@ machine = TocMachine(
         },
         {
             "trigger": "trig_save",
-            "source": "save",
+            "source": "add",
             "dest": "savefood",
             "conditions": "is_going_to_savefood",
         },
@@ -74,7 +74,7 @@ machine = TocMachine(
             "conditions": "is_going_to_repeat",
         },
         {"trigger": "back", "source": ["savefood","savencku","savedrink"], "dest": "user"},
-        {"trigger": "go_back", "source": ["helper", "food","drink","ncku","repeat"], "dest": "user"},
+        {"trigger": "go_back", "source": [ "food","drink","ncku","repeat"], "dest": "user"},
     ],
     initial="user",
     auto_transitions=False,
